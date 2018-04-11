@@ -47,15 +47,17 @@ El usuario no debe poder ingresar un campo vacío o que contenga números
 ## Funcionalidad.
 -[ ] prompt('string')
 
--[ ] function cipher(st, n);
-
 -[ ] validacion de string
+
+-[ ] function cipher(st, n);
 
 -[ ] for (var i =0 ; i <= string.length ; i++ )
 
--[ ] var string2  = input.charCodeAt(i); // esta debera guardar los resultados
+-[ ] var stringCiphered  = input.charCodeAt(i); // esta debera guardar los resultados
 
--[ ] var Decipher2 = (string - 65 + n(<- numero fijo en este caso 33))%26 + 65
+-[ ] var ciphered = (string - 65 + n(<- numero fijo en este caso 33))%26 + 65
+
+-[ ] Funcion Decipher
 
 -[ ] for (var e = 0; e  <= string2.length; e++);
 

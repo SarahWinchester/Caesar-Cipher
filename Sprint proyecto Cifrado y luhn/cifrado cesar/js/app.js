@@ -19,21 +19,47 @@
 -[ ] var result = array.join('')*/
 
 var n = 33 ;
-var string = prompt("Ingresa la  palabra a cifrar \n **RECUERDA, no uses espacios, ni caracteres extraños ");
- if (string !== '' && string.replace(/[0-9]/g,'') !== string){  // Se necesita llamar funcion aqui?
-   cipher(string);
+var upperCaseA = 65;
+var upperCaseZ = 90;
+var lowerCasea = 97;
+var lowerCasez = 122;
 
- }else{
-    alert ("Error, favor de ingresar nuevamente");
-      string = prompt("Ingresa la  palabra a cifrar \n **RECUERDA, no uses espacios, ni caracteres extraños ");
+var str = prompt("Ingresa la  palabra a cifrar \n **RECUERDA, no uses espacios, ni caracteres extraños "); //Pide palabra
 
-   }//else
+function validateInput(str){
+  while(str === ""){
+    str = prompt("Ingresa una cadena valida");
+  }
 
-   Function cipher(string, n){
+  for(var i = 0; i < str.length; i++ ){
+    var characterCode = str.charCodeAt(i);
+    if((characterCode < upperCaseA && characterCode > upperCaseZ) || (characterCode < upperCaseA && characterCode > upperCaseZ)){
+      str = prompt("Ingresa una cadena valida");// si no cumple
+    }//if
+
+  }//for validate
+
+}// fin de funcion validateInput
+
+  function cipher(str , n){
       var stringCipher = "";
       for (var i = 0; i < string.length; i++) {
-          var ciphered  = (string.charCodeAt(i)- 65 + n ) % 26 =65 ;
-      stringCipher +s= string.fromCharCode(ciphered );  // se puede usar += ?
+          var ciphered  = (string.charCodeAt(i)- 65 + n ) % 26 + 65 ;
+      stringCipher = string.fromCharCode(ciphered );  // se puede usar += ?
     }//for
-    return stringCipher;
+    return cipher(str,n);
   }// funcion cipher
+
+
+  function descipher(str){
+      for (var e = 0 ; e <= str.length; e++ ){
+      var deciphered = str.fromCharCode(e);
+      var array = deciphered.push();
+      var result = array.join("");
+
+    }//Decipher for
+      return result;
+
+}// funcion decipher
+
+console.log(descipher(str));
